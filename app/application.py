@@ -1,5 +1,4 @@
 from common import *
-from common import *
 from .component import *
 
 class Application:
@@ -12,9 +11,11 @@ class Application:
         self.hand_detector = HandDetector()
         self.keyboard = Keyboard()
         self.fps = FpsCalc()
+        self.core = Core()
         self.components = [
             self.camera,
             self.hand_detector,
+            self.core,
             self.keyboard,
             self.fps
         ]

@@ -5,5 +5,5 @@ from util.timer import timer_result, timer_start
 from tool.drawing import *
 from tool.logger import *
 from collections import deque, Counter
-from store import get, set, get_tick
+from store import get, set, get_tick, ee
 from copy import deepcopy

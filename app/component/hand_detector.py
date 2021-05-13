@@ -23,6 +23,10 @@ class HandDetector(Component):
         self._mp_process()
         if self.result.multi_hand_landmarks:
             self._preprocess_result()
+
+            hand = get('hand')
+            print(int(degrees(hand.rect.rotation)))
+
         else:
             set('hand', None)
 

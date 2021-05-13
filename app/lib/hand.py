@@ -76,7 +76,7 @@ class Hand:
 
     def _is_finger_opened(self, tip, min_alpha, min_beta, min_d):
         alpha = angle(self.points[tip], self.points[(tip - 1)], self.points[(tip - 2)])
-        beta = angle(self.points[(tip - 1)], self.points[(tip - 2)], self.points[(tip - 3)])
+        beta  = angle(self.points[(tip - 1)], self.points[(tip - 2)], self.points[(tip - 3)])
         theta = angle(self.points[(tip - 2)], self.points[(tip - 3)], self.points[0])
         return alpha > min_alpha and beta > min_beta and theta > 120 and distance(self.points[tip], self.points[0]) > min_d
 

@@ -14,6 +14,8 @@ BLACK = (54, 52, 45)
 def draw_text(image, text, pos, size=1, color=WHITE, thichness=None):
     cv2.putText(image, text, pos, global_font, size, color, thichness)
 
+def draw_circle(image, pos, radius, color, thickness=-1):
+    cv2.circle(image, (int(pos[0]), int(pos[1])), radius, color, thickness)
 
 def draw_lines(image, points, color, thichness=None):
     for i in range(len(points) - 1):

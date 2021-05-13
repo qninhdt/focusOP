@@ -15,8 +15,8 @@ def distance(a, b):
     return sqrt((a[0]-b[0])**2 + (a[1]-b[1])**2)
 
 def bounding_rect(points):
-    x_min, y_min = points[0]
-    x_max, y_max = points[0]
+    x_min, y_min = points[0][0], points[0][1]
+    x_max, y_max = points[0][0], points[0][1]
 
     for p in points:
         x_min, y_min = min(x_min, p[0]), min(y_min, p[1])
