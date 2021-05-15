@@ -56,3 +56,6 @@ def angle(a, b, c):
     cos_theta = (ab**2 + bc**2 - ca**2) / (2*ab*bc)
 
     return degrees(acos(cos_theta)) 
+
+def is_inside_box(point, box):
+    return point[0] > box[0] and point[0] < (box[0] + box[2]) and point[1] > box[1] and point[1] < (box[1] + box[3]) 

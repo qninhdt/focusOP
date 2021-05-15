@@ -1,0 +1,59 @@
+<div class="slides">
+
+    <section>
+        <v-hoverable>Click me UwU</v-hoverable>
+        <v-draggable data="am, I, student, a" correct="I, am, a, student" horizontal="true"></v-draggable>
+    </section>
+
+    <!-- SCROLLING -->
+    <section>
+        <h2 style="color: #e056fd" class="fragment">
+            SỬ DỤNG <span style="color: #be2edd">NGÓN TAY</span> ĐỂ KÉO VĂN BẢN
+        </h2>
+    </section>
+
+    <section data-transition="zoom">
+        <v-scrollable>
+            <v-text>
+                <b>Đọc văn bản sau và trả lời các câu hỏi:</b><br/>
+
+    Mười tay
+    Bồng bồng con nín con ơi
+    Dưới sông cá lội, ở trên trời chim bay.
+    Ước gì mẹ có mười tay
+    Tay kia bắt cá, còn tay này bắn chim.
+    Một tay chuốt chỉ luồn kim
+    Một tay đi làm ruộng, một tay tìm hái rau
+    Một tay ôm ấp con đau
+    Một tay đi vay gạo, một tay cầu cúng ma.
+    Một tay khung cửi, guồng xa
+    Một tay lo bếp nước, lo cửa nhà nắng mưa.
+    Một tay đi củi, muối dưa
+    Còn tay để van lạy, để bẩm thưa đỡ đòn.
+    Tay nào để giữ lấy con
+    Tay nào lau nước mắt, mẹ vẫn còn thiếu tay.
+    Bồng bồng con ngủ cho say
+    Dưới sông cá vẫn lội, chim vẫn bay trên trời.
+
+    <i>(Trích ca dao – Dân tộc Mường)</i><br/><br/>
+
+<b>Câu 1: Những thông tin sau về bài thơ đúng hay sai:</b>
+
+    A. Tác phẩm thuộc thể loại Văn học trung đại
+    B. Nhân vật trữ tình trong tác phẩm là người con
+    C. Tác phẩm viết theo thể thơ lục bát biến thể
+    D. Từ “tay” được nhắc lại 16 lần trong văn bản
+    E. Đây là bài hát ru con của người mẹ lao động miền núi
+
+    <br/><b>Câu 2: Ý nghĩa nhan đề của bài ca dao?</b>
+
+    <br/><br/><b>Câu 3: Tác giả dân gian đã sử dụng các biện pháp tu từ 
+nào trong bài ca dao? Tác dụng của các biện pháp tu từ đó?</b>
+
+<br/><br/><b>Câu 4: Từ bài ca dao trên, anh (chị) viết một đoạn văn ngắn 
+trình bày cảm nghĩ về mẹ?</b>
+            </v-text>
+        </v-scrollable>
+    </section>
+    <section></section>
+</div>

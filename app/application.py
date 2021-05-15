@@ -1,3 +1,5 @@
+from app.component import board
+from app.component.board import Board
 from common import *
 from .component import *
 
@@ -7,16 +9,21 @@ class Application:
         self.name = name
         self.debug_image = None
         self.image = None
-        self.camera = Camera(3)
+        self.camera = Camera()
         self.hand_detector = HandDetector()
+        self.board = Board()
         self.keyboard = Keyboard()
         self.fps = FpsCalc()
         self.core = Core()
+        self.mouse = Mouse()
+
         self.components = [
             self.camera,
             self.hand_detector,
             self.core,
+            self.board,
             self.keyboard,
+            self.mouse,
             self.fps
         ]
         self.stopped = False

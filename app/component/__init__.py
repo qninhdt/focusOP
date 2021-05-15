@@ -4,3 +4,4 @@ from .camera import Camera
 from .keyboard import Keyboard, Key
 from .hand_detector import *
 from .core import Core
+from .mouse import Mouse

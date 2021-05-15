@@ -35,7 +35,7 @@ class Server:
         
         @self.socket.on('get_fop')
         def send_fop(filename):
-            file = open(self.fop + "/" + filename, 'r') 
+            file = open(self.fop + "/" + filename, 'r', encoding="utf-8") 
             return file.read()
 
         @ee.on('new_hand_type')
@@ -45,6 +45,10 @@ class Server:
         @ee.on('new_hand_dir')
         def new_hand_dir(hand_dir):
             self.socket.emit("new_hand_dir", hand_dir)
+
+        @ee.on('cursor')
+        def cursor(point):
+            self.socket.emit('cursor', point)
 
     def start(self):
         thread = Thread(target=self.socket.run, args=(self.flask,), kwargs={"port": self.port})

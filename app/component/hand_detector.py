@@ -10,7 +10,7 @@ class HandDetector(Component):
     def __init__(self):
         self.result = None
         self.created_tflite = False
-        self.mphand = self.lib_mphand.Hands(min_detection_confidence=0.6,
+        self.mphand = self.lib_mphand.Hands(min_detection_confidence=0.75,
           min_tracking_confidence=0.5,
           max_num_hands=1)
 
@@ -25,7 +25,6 @@ class HandDetector(Component):
             self._preprocess_result()
 
             hand = get('hand')
-            print(int(degrees(hand.rect.rotation)))
 
         else:
             set('hand', None)

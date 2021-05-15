@@ -24,7 +24,13 @@ class Core(Component):
                 else:
                     set('hand_dir', 'right')
                 self.point_history.clear()
-            else:
+            elif h > 75:
+                if first[1] < last[1]:
+                    set('hand_dir', 'up')
+                else:
+                    set('hand_dir', 'down')
+                self.point_history.clear()
+            else: 
                 set('hand_dir', None)
         else:
             set('hand_dir', None)

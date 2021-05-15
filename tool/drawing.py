@@ -29,6 +29,9 @@ def draw_transparent_rect(image, box, color, alpha):
     image = cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0)
     return image
 
+def draw_rect(image, rect, color, thickness):
+    cv2.rectangle(image, (rect[0], rect[1]), (rect[0]+rect[2], rect[1]+rect[3]), color, thickness)
+
 
 FINGERS = [
  [
