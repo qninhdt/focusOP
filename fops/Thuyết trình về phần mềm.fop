@@ -1,13 +1,70 @@
 <div class="slides">
 
     <section>
-        <v-hoverable>Click me UwU</v-hoverable>
-        <v-draggable data="am, I, student, a" correct="I, am, a, student" horizontal="true"></v-draggable>
+        <p>Đạo hàm của hàm số $y=f(x)$ kí hiệu là $f'(x)$:</p>
+        <v-hoverable>
+            \[\begin{aligned}
+            f'(x)=\lim_{x \to x_0}{\frac{f(x)-f(x_0)}{x-x_0}}
+            \end{aligned} \]
+        </v-hoverable>
+        <p>Ý nghĩa vật lý:</p>
+        <div class="columns">
+            <div class="column is-6">
+                <v-hoverable>
+                    $a(t_0)=s''(t_0)$
+                </v-hoverable>
+            </div>
+            <div class="column is-6">
+                <v-hoverable>
+                    $I(t_0)=Q'(t_0)$
+                </v-hoverable>
+            </div>
+        </div>
+        
+    </section>
+
+    <section>
+        <h2 style="color: #e056fd">
+            HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
+        </h2>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+        ```ruby [5-7|11-13|17-18|1]
+uses crt;
+var a,b,c,x1,x2,d:real;
+BEGIN
+    clrscr;
+    write('Nhap a: ');readln(a);
+    write('Nhap b: ');readln(b);
+    write('Nhap c: ');readln(c);
+    d:=b*b-4*a*c;
+    if d>0 then
+        begin
+            x1:=(-b+sqrt(d))/(2*a);
+            x2:=(-b-sqrt(d))/(2*a);
+            writeln('2 nghiem PT la: ',x1:0:2,' va: ',x2:0:2);
+        end
+    else if d=0 then
+        begin
+        x1:=(-b)/(2*a);
+        writeln('PT co nghiem kep la: ',x1:0:2);
+        end
+    else 
+        writeln('PT vo nghiem');
+    readln
+end.
+        </textarea>
+    </section>
+
+    <section>
+        <v-draggable data="I, am, student, a" correct="I, am, a, student" horizontal="true"></v-draggable>
     </section>
 
     <!-- SCROLLING -->
     <section>
-        <h2 style="color: #e056fd" class="fragment">
+        <h2 style="color: #e056fd">
             SỬ DỤNG <span style="color: #be2edd">NGÓN TAY</span> ĐỂ KÉO VĂN BẢN
         </h2>
     </section>
@@ -15,6 +72,7 @@
     <section data-transition="zoom">
         <v-scrollable>
             <v-text>
+
                 <b>Đọc văn bản sau và trả lời các câu hỏi:</b><br/>
 
     Mười tay

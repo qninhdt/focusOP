@@ -2,8 +2,10 @@ from common import *
 from flask import Flask, send_from_directory
 from flask_socketio import SocketIO
 from flask_cors import CORS
-from threading import Thread
 import glob, os
+
+os.environ['FLASK_ENV'] = 'development'
+
 class Server:
 
     def __init__(self, port, static, fop):
@@ -51,5 +53,4 @@ class Server:
             self.socket.emit('cursor', point)
 
     def start(self):
-        thread = Thread(target=self.socket.run, args=(self.flask,), kwargs={"port": self.port})
-        thread.start()
+        target=self.socket.run(self.flask,  port=self.port, use_reloader=False)

@@ -26,9 +26,9 @@ class Mouse(Component):
             cursor = self.app.board.cursor
 
             if hand_dir == 'down':
-                pyautogui.scroll(50)
+                pyautogui.scroll(500)
             elif hand_dir == 'up':
-                pyautogui.scroll(-50)
+                pyautogui.scroll(-500)
 
             if self.app.stopped or hand is None or cursor is None:
                 break
