@@ -47,7 +47,7 @@ class Application:
         [c.debug() for c in self.components]
 
         h, w, _ = self.debug_image.shape
-        self.debug_image = cv2.resize(self.debug_image, (int(w/2), int(h/2)))
+        # self.debug_image = cv2.resize(self.debug_image, (int(w/2), int(h/2)))
         cv2.imshow(self.name, self.debug_image)
 
     def shutdown(self):

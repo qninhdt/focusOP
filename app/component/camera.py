@@ -12,8 +12,8 @@ class Camera(Component):
         self.cap.set(4, 750)
         
     def find_camera(self):
-        # src = int(input('Camera device number (0 -> 3): '))
-        src = 3
+        src = int(input('Camera device number (0 -> 3): '))
+        # src = 3
         self.cap = cv2.VideoCapture(src, cv2.CAP_DSHOW)
 
         if self.cap.isOpened() and self.cap.read()[0]:

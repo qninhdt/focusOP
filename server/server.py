@@ -2,7 +2,9 @@ from common import *
 from flask import Flask, send_from_directory
 from flask_socketio import SocketIO
 from flask_cors import CORS
-import glob, os
+import glob, os, webbrowser
+from threading import Timer
+from engineio.async_drivers import gevent
 
 os.environ['FLASK_ENV'] = 'development'
 
@@ -16,7 +18,7 @@ class Server:
 
         CORS(self.flask)
         
-        self.socket = SocketIO(self.flask, cors_allowed_origins='*')
+        self.socket = SocketIO(self.flask, cors_allowed_origins='*', async_mode='gevent')
 
         @self.flask.route('/')
         def home():

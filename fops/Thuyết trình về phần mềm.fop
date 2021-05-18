@@ -1,5 +1,32 @@
 <div class="slides">
+    
+    <!-- WELCOME -->
+    <section>
+        <div class="columns">
+            <div class="column is-7">
+                <h1 class="big-text">FocusOP</h1>
+                <span class="sub-text">Phần mềm nhận diện cử chỉ + trình chiếu</span>
+                <div class="line"></div>
+                <i style="color: #686de0">Nguyễn Quang Ninh</i>
+            </div>
+            <div class="column is-auto">
+                <img src="/app/public/cv.jpg" alt="Lmao" 
+                style="width: 15rem;" >
+            </div>
+        </div>
+        
+    </section>
 
+    <section>
+        <h2 class="big-text">Ý TƯỞNG</h2>
+        <img src="/app/public/presentation.jpg">
+    </section>
+    
+    <section>
+        <div class="big-text">MÔ HÌNH</div>
+        <img src="/app/public/model.svg">
+    </section>
+    <!-- MATH -->
     <section>
         <p>Đạo hàm của hàm số $y=f(x)$ kí hiệu là $f'(x)$:</p>
         <v-hoverable>
@@ -23,6 +50,7 @@
         
     </section>
 
+    <!-- TIN -->
     <section>
         <h2 style="color: #e056fd">
             HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
@@ -31,7 +59,7 @@
 
     <section data-markdown>
         <textarea data-template>
-        ```ruby [5-7|11-13|17-18|1]
+        ```ruby [11-13|5-7]
 uses crt;
 var a,b,c,x1,x2,d:real;
 BEGIN
@@ -58,6 +86,28 @@ end.
         </textarea>
     </section>
 
+    <!-- DRAGGABLE -->
+    <section>
+        <div style="margin: 2rem;">
+            <v-dragitem name='Nhện'></v-dragitem>
+            <v-dragitem name='Bò cạp'></v-dragitem>
+            <v-dragitem name='Bướm'></v-dragitem>
+
+            <v-dragitem name='Chim'></v-dragitem>
+            <v-dragitem name='Hưu cao cổ'></v-dragitem>
+            <v-dragitem name='Cá'></v-dragitem>
+        </div>
+        <div class="columns">
+            <div class="column is-6">
+                <v-dropzone name="Động vật có xương sống" correct="Chim, Hưu cao cổ, Cá"></v-dropzone>
+            </div>
+            <div class="column is-6">
+                <v-dropzone name="Động vật chân khớp" correct="Nhện, Bò cạp, Bướm"></v-dropzone>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENGLISH -->
     <section>
         <v-draggable data="I, am, student, a" correct="I, am, a, student" horizontal="true"></v-draggable>
     </section>
@@ -113,5 +163,30 @@ trình bày cảm nghĩ về mẹ?</b>
             </v-text>
         </v-scrollable>
     </section>
-    <section></section>
+    <section data-background-iframe="/app/public/example.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" data-background-interactive></section>
+
 </div>
+
+<style>
+    .big-text {
+        background: right center / contain url("/app/public/text-bg.jpg");
+        background-clip:text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 2rem 1rem;
+        font-size: 4rem!important;
+    }
+    .sub-text {
+        font-size: 2rem;
+        background: linear-gradient( to bottom left,#4834d4 50%,#be2edd 100%);
+        background-clip:text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .line {
+        width: 60%;
+        height: .1rem;
+        margin: 3rem auto;
+        background: linear-gradient(to bottom left,#344cd4 50%,#dd2ed4 60%);
+    }
+</style>
