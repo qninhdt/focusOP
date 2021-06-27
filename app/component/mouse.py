@@ -37,7 +37,13 @@ class Mouse(Component):
             w, h = pyautogui.size()
             x = int(x * w)
             y = int(y * h)
-         
+
+            if hand.hand_type == hand.NICE and self.last_hand_type == hand.CONTROL:
+                pyautogui.press("right")
+
+            if hand.hand_type == hand.NICE and self.last_hand_type == hand.ALO:
+                pyautogui.press("left")
+
             if hand.hand_type == hand.ROCK and self.last_hand_type == hand.POINT:
                 pyautogui.click(x, y)
             

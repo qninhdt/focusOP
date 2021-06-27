@@ -50,12 +50,7 @@
         
     </section>
 
-    <!-- TIN -->
-    <section>
-        <h2 style="color: #e056fd">
-            HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
-        </h2>
-    </section>
+    
 
     <section data-markdown>
         <textarea data-template>
@@ -163,7 +158,20 @@ trình bày cảm nghĩ về mẹ?</b>
             </v-text>
         </v-scrollable>
     </section>
-    <section data-background-iframe="/app/public/example.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" data-background-interactive></section>
+    <!-- TIN -->
+    <section>
+        <h2 style="color: #e056fd">
+            HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
+        </h2>
+    </section>
+    <section 
+        data-background-iframe="/app/public/example.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
+        data-background-interactive>
+    </section>
+
+    <section>
+        <h2 class="big-text">CẢM ƠN THẦY CÔ ĐÃ LẮNG NGHE !</h2>
+    </section>
 
 </div>
 

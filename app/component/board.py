@@ -7,10 +7,9 @@ class Board(Component):
     def __init__(self):
         self.cursor = None
         self._cursor = None
-        h, w, c = self.app.image
         self.lower = np.array([0,0,0], dtype = "uint8")
         self.upper = np.array([80 ,80, 80], dtype = "uint8")
-        self.rect = 0, 0, w, h
+        self.rect = None
 
         self.squares = None
         self.last = 0
@@ -19,7 +18,11 @@ class Board(Component):
     def process(self):
         now = time.time()
 
-        if not self.is_locked and (now - self.last > 5 or self.last == 0):
+        if self.rect is None:
+            h, w, c = self.app.image.shape
+            self.rect = 0, 0, w, h
+
+        if not self.is_locked and (now - self.last > 1 or self.last == 0):
             # TWO SQUARES 
             kernel = np.ones((5,5),np.uint8)
 
@@ -45,7 +48,7 @@ class Board(Component):
                     continue
 
                 squares.append(contour)
-                cv2.rectangle(self.app.debug_image, (x, y), (x+w, y+h), (255, 0, 0), 2)
+                #cv2.rectangle(self.app.debug_image, (x, y), (x+w, y+h), (255, 0, 0), 2)
             
             l = len(squares)
             for i in range(l-1):
