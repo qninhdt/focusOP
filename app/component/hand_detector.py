@@ -24,8 +24,6 @@ class HandDetector(Component):
         if self.result.multi_hand_landmarks:
             self._preprocess_result()
 
-            hand = get('hand')
-
         else:
             set('hand', None)
 

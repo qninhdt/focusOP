@@ -49,7 +49,7 @@ class Server:
         @ee.on('new_hand_dir')
         def new_hand_dir(hand_dir):
             self.socket.emit("new_hand_dir", hand_dir)
-
+     
         @ee.on('cursor')
         def cursor(point):
             self.socket.emit('cursor', point)

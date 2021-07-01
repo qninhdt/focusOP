@@ -26,7 +26,19 @@
         <div class="big-text">MÔ HÌNH</div>
         <img src="/app/public/model.svg">
     </section>
+    <!--  -->
+    <section>
+        <div class="big-text">CHUYỂN TRANG TRÌNH CHIẾU</div>
+        <img src="/app/public/next.png">
+    </section>
+    <section><h1>Trang 1</h1></section>
+    <section><h1>Trang 2</h1></section>
+    <section><h1>Trang 3</h1></section>
     <!-- MATH -->
+    <section>
+        <div class="big-text">LÀM NỔI BẬT NỘI DỤNG</div>
+        <img src="/app/public/highlight.png">
+    </section>
     <section>
         <p>Đạo hàm của hàm số $y=f(x)$ kí hiệu là $f'(x)$:</p>
         <v-hoverable>
@@ -50,38 +62,11 @@
         
     </section>
 
-    
-
-    <section data-markdown>
-        <textarea data-template>
-        ```ruby [11-13|5-7]
-uses crt;
-var a,b,c,x1,x2,d:real;
-BEGIN
-    clrscr;
-    write('Nhap a: ');readln(a);
-    write('Nhap b: ');readln(b);
-    write('Nhap c: ');readln(c);
-    d:=b*b-4*a*c;
-    if d>0 then
-        begin
-            x1:=(-b+sqrt(d))/(2*a);
-            x2:=(-b-sqrt(d))/(2*a);
-            writeln('2 nghiem PT la: ',x1:0:2,' va: ',x2:0:2);
-        end
-    else if d=0 then
-        begin
-        x1:=(-b)/(2*a);
-        writeln('PT co nghiem kep la: ',x1:0:2);
-        end
-    else 
-        writeln('PT vo nghiem');
-    readln
-end.
-        </textarea>
-    </section>
-
     <!-- DRAGGABLE -->
+    <section>
+        <div class="big-text">KÉO THẢ VĂN BẢN</div>
+        <img src="/app/public/drag.png">
+    </section>
     <section>
         <div style="margin: 2rem;">
             <v-dragitem name='Nhện'></v-dragitem>
@@ -164,6 +149,34 @@ trình bày cảm nghĩ về mẹ?</b>
             HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
         </h2>
     </section>
+    <section data-markdown>
+        <textarea data-template>
+        ```ruby [11-13|5-7]
+uses crt;
+var a,b,c,x1,x2,d:real;
+BEGIN
+    clrscr;
+    write('Nhap a: ');readln(a);
+    write('Nhap b: ');readln(b);
+    write('Nhap c: ');readln(c);
+    d:=b*b-4*a*c;
+    if d>0 then
+        begin
+            x1:=(-b+sqrt(d))/(2*a);
+            x2:=(-b-sqrt(d))/(2*a);
+            writeln('2 nghiem PT la: ',x1:0:2,' va: ',x2:0:2);
+        end
+    else if d=0 then
+        begin
+        x1:=(-b)/(2*a);
+        writeln('PT co nghiem kep la: ',x1:0:2);
+        end
+    else 
+        writeln('PT vo nghiem');
+    readln
+end.
+        </textarea>
+    </section>
     <section 
         data-background-iframe="/app/public/example.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" 
         data-background-interactive>
@@ -176,6 +189,9 @@ trình bày cảm nghĩ về mẹ?</b>
 </div>
 
 <style>
+    pre {
+        font-size: 1.5rem!important;
+    }
     .big-text {
         background: right center / contain url("/app/public/text-bg.jpg");
         background-clip:text;

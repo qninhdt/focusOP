@@ -7,6 +7,7 @@ hand_type_labels = {11000:'CONTROL',
  1100:'PEACE',
  1110:'THREE',
  1111:'FOUR',
+ 1101: 'LMAO',
  100:'FUCK',
  1001:'ROCK',
  10000:'NICE',
@@ -28,6 +29,7 @@ class Hand:
     ROCK = 1001
     NICE = 10000
     ALO = 10001
+    LMAO = 1101
     SPIDER = 11001
     CONTROL = 11000
     HEART = 10002

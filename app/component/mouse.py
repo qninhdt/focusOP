@@ -38,18 +38,21 @@ class Mouse(Component):
             x = int(x * w)
             y = int(y * h)
 
-            if hand.hand_type == hand.NICE and self.last_hand_type == hand.CONTROL:
+            if self.last_hand_type == hand.NICE and hand.hand_type == hand.CONTROL:
                 pyautogui.press("right")
 
-            if hand.hand_type == hand.NICE and self.last_hand_type == hand.ALO:
+            if self.last_hand_type == hand.NICE and hand.hand_type == hand.ALO:
                 pyautogui.press("left")
+
+            if hand.hand_type == hand.LMAO and self.last_hand_type == hand.PEACE:
+                pyautogui.doubleClick(x, y)
 
             if hand.hand_type == hand.ROCK and self.last_hand_type == hand.POINT:
                 pyautogui.click(x, y)
             
-            if hand.hand_type == hand.POINT or hand.hand_type == hand.CONTROL or hand.hand_type == hand.OPEN or hand.hand_type == hand.FOUR:
+            if hand.hand_type == hand.POINT or hand.hand_type == hand.PEACE or hand.hand_type == hand.CONTROL or hand.hand_type == hand.OPEN or hand.hand_type == hand.FOUR:
                 pyautogui.moveTo(x, y)
-         
+      
                 if hand.hand_type == hand.CONTROL and self.last_hand_type == hand.POINT:
                     pyautogui.mouseDown(x, y)
                 elif hand.hand_type == hand.POINT and self.last_hand_type == hand.CONTROL:

@@ -48,6 +48,7 @@ class Application:
 
         h, w, _ = self.debug_image.shape
         # self.debug_image = cv2.resize(self.debug_image, (int(w/2), int(h/2)))
+        cv2.setMouseCallback(self.name, self.board.click)
         cv2.imshow(self.name, self.debug_image)
 
     def shutdown(self):

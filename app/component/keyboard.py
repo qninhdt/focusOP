@@ -15,3 +15,5 @@ class Keyboard(Component):
             self.app.board.is_locked = True
         elif self.pressed_key == Key.U:
             self.app.board.is_locked =  False
+        elif self.pressed_key == Key.T:
+            self.app.board.thu_cong_mode = not self.app.board.thu_cong_mode

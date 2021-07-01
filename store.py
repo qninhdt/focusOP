@@ -45,7 +45,7 @@ def set(key, val):
 
     elif key == 'hand_dir':
         if val != data['hand_dir']:
-            ee.emit('new_hand_dir', data['hand_dir'])
+            ee.emit('new_hand_dir', val)
 
     data[key] = val
     lock.release()

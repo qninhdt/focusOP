@@ -1,6 +1,5 @@
-from common import *
-from . import Component
 import device
+import cv2
 
 def select_camera(last_index):
     number = 0
@@ -53,20 +52,3 @@ def find_camera():
         print('Default width: ' + str(width) + ', height: ' + str(height))
 
         return cap
-
-class Camera(Component):
-
-    def __init__(self):
-        Component.__init__(self)
-
-        self.cap = find_camera()
-
-        self.cap.set(3, 1000)
-        self.cap.set(4, 750)
-        
-    def process(self):
-        _, self.app.debug_image = self.cap.read()
-        self.app.image = cv2.cvtColor(self.app.debug_image, cv2.COLOR_BGR2RGB)
-
-    def shutdown(self):
-        self.cap.release()

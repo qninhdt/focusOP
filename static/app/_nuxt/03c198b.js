@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{322:function(e,t,n){"use strict";n.r(t);var o={layout:"dashboard",head:{title:"FocusOP ― Home"}},l=n(2),component=Object(l.a)(o,(function(){var e=this,t=e.$createElement;return(e._self._c||t)("div",[e._v("Home")])}),[],!1,null,null,null);t.default=component.exports}}]);

@@ -9,18 +9,32 @@ class Board(Component):
         self._cursor = None
         self.lower = np.array([0,0,0], dtype = "uint8")
         self.upper = np.array([80 ,80, 80], dtype = "uint8")
+
         self.rect = None
 
         self.squares = None
         self.last = 0
         self.is_locked = False
+        self.thu_cong_mode = False
+
+    def click(self, event, x, y, flags, params):
+        if self.thu_cong_mode:
+            self.squares = None
+            if event == cv2.EVENT_LBUTTONDOWN:
+                self.rect[0] = x
+                self.rect[1] = y
+            if event == cv2.EVENT_RBUTTONDOWN:
+                self.rect[2] = abs(self.rect[0]-x)
+                self.rect[3] = abs(self.rect[1]-y)
+
+            self.is_locked = True
 
     def process(self):
         now = time.time()
 
         if self.rect is None:
             h, w, c = self.app.image.shape
-            self.rect = 0, 0, w, h
+            self.rect = [0, 0, w, h]
 
         if not self.is_locked and (now - self.last > 1 or self.last == 0):
             # TWO SQUARES 
@@ -79,7 +93,7 @@ class Board(Component):
                         if abs(sw/sh-16/9) < .5 and sh*1.5 > h and sw*1.5 > w:
                             if abs(sw/size-50) < 100:
                                 self.squares = [squares[i], squares[j]]
-                                self.rect = int(sx), int(sy), int(sw), int(sh)
+                                self.rect = [int(sx), int(sy), int(sw), int(sh)]
                                 self.last = now
                                 break
 
@@ -117,4 +131,5 @@ class Board(Component):
             x, y, w, h = cv2.boundingRect(sq2)
             cv2.rectangle(self.app.debug_image, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
+        draw_text(self.app.debug_image, 'Picking ...' if self.thu_cong_mode else '', (self.rect[0], self.rect[1]-30), 1, YELLOW)
         draw_text(self.app.debug_image, 'Locked' if self.is_locked else 'Unlocked', (self.rect[0], self.rect[1]-10), 1, ORANGE)
