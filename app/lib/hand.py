@@ -39,7 +39,7 @@ class Hand:
 
     def __init__(self, landmarks, label, rect):
         self.landmarks = landmarks
-        self.label = label
+        self.label = label.lower()
         self.rect = rect
         self.states = [False] * 5
         self.hand_type = None
@@ -53,10 +53,10 @@ class Hand:
         self.preprocess()
         self.states = [
          self._is_thumb_opened(),
-         self._is_finger_opened(8, 150, 100, 0.5),
-         self._is_finger_opened(12, 150, 100, 0.6),
-         self._is_finger_opened(16, 150, 100, 0.5),
-         self._is_finger_opened(20, 150, 100, 0.5)]
+         self._is_finger_opened(8, 160, 100, 0.6),
+         self._is_finger_opened(12, 160, 100, 0.7),
+         self._is_finger_opened(16, 160, 100, 0.6),
+         self._is_finger_opened(20, 160, 100, 0.5)]
         self.hand_type = 0
         for i in range(len(self.states)):
             self.hand_type += self.states[i] * 10 ** (4 - i)
@@ -74,7 +74,7 @@ class Hand:
 
     def _is_thumb_opened(self):
         a = distance(self.points[4], self.points[14])
-        return a > 0.35
+        return a > 0.45
 
     def _is_finger_opened(self, tip, min_alpha, min_beta, min_d):
         alpha = angle(self.points[tip], self.points[(tip - 1)], self.points[(tip - 2)])

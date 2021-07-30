@@ -7,7 +7,9 @@
                 <h1 class="big-text">FocusOP</h1>
                 <span class="sub-text">Phần mềm nhận diện cử chỉ + trình chiếu</span>
                 <div class="line"></div>
-                <i style="color: #686de0">Nguyễn Quang Ninh</i>
+                <i>Nguyễn Quang Ninh</i><br>
+                <i>Lớp 11A1 - Trường THPT Đông Triều</i><br>
+                <i>Tx Đông Triều, Tỉnh Quảng Ninh</i>
             </div>
             <div class="column is-auto">
                 <img src="/app/public/cv.jpg" alt="Lmao" 
@@ -36,7 +38,7 @@
     <section><h1>Trang 3</h1></section>
     <!-- MATH -->
     <section>
-        <div class="big-text">LÀM NỔI BẬT NỘI DỤNG</div>
+        <div class="big-text">LÀM NỔI BẬT NỘI DUNG</div>
         <img src="/app/public/highlight.png">
     </section>
     <section>
@@ -62,6 +64,19 @@
         
     </section>
 
+    <!-- QUIZ -->
+    <section>
+        <v-quiz
+            question="Ngày chiến thắng Điện Biên Phủ là ngày nào?"
+            ans1="5/7/1945"
+            ans2="7/5/1954"
+            ans3="30/4/1975"
+            ans4="17/5/1954"
+            correct="2"
+        ></v-quiz>
+    </section>
+    
+
     <!-- DRAGGABLE -->
     <section>
         <div class="big-text">KÉO THẢ VĂN BẢN</div>
@@ -69,13 +84,10 @@
     </section>
     <section>
         <div style="margin: 2rem;">
-            <v-dragitem name='Nhện'></v-dragitem>
-            <v-dragitem name='Bò cạp'></v-dragitem>
-            <v-dragitem name='Bướm'></v-dragitem>
-
             <v-dragitem name='Chim'></v-dragitem>
-            <v-dragitem name='Hưu cao cổ'></v-dragitem>
+            <v-dragitem name='Nhện'></v-dragitem>
             <v-dragitem name='Cá'></v-dragitem>
+            <v-dragitem name='Bò cạp'></v-dragitem>
         </div>
         <div class="columns">
             <div class="column is-6">
@@ -94,8 +106,8 @@
 
     <!-- SCROLLING -->
     <section>
-        <h2 style="color: #e056fd">
-            SỬ DỤNG <span style="color: #be2edd">NGÓN TAY</span> ĐỂ KÉO VĂN BẢN
+        <h2 class="big-text">
+            SỬ DỤNG NGÓN TAY ĐỂ KÉO<br/> VĂN BẢN
         </h2>
     </section>
 
@@ -145,8 +157,8 @@ trình bày cảm nghĩ về mẹ?</b>
     </section>
     <!-- TIN -->
     <section>
-        <h2 style="color: #e056fd">
-            HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN  <span style="color: #be2edd">TIN HỌC</span> 
+        <h2 class="big-text">
+            HỖ TRỢ TRÌNH CHIẾU CODE DÀNH CHO MÔN TIN HỌC
         </h2>
     </section>
     <section data-markdown>
@@ -193,19 +205,13 @@ end.
         font-size: 1.5rem!important;
     }
     .big-text {
-        background: right center / contain url("/app/public/text-bg.jpg");
-        background-clip:text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #dcdde1;
         margin: 2rem 1rem;
         font-size: 4rem!important;
     }
     .sub-text {
         font-size: 2rem;
-        background: linear-gradient( to bottom left,#4834d4 50%,#be2edd 100%);
-        background-clip:text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #f5f6fa;
     }
     .line {
         width: 60%;

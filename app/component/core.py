@@ -1,3 +1,4 @@
+from time import time
 from common import *
 from .component import Component
 
@@ -8,7 +9,7 @@ class Core(Component):
 
     def process(self):
         hand = get('hand')
-        
+
         if hand is not None and hand.hand_type == hand.PEACE:
             self.point_history.append(hand.index_point)
 

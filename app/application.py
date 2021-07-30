@@ -2,10 +2,10 @@ from app.component import board
 from app.component.board import Board
 from common import *
 from .component import *
-
+import device
 class Application:
 
-    def __init__(self, name):
+    def __init__(self, name, camera_port):
         self.name = name
         self.debug_image = None
         self.image = None
@@ -26,9 +26,13 @@ class Application:
             self.mouse,
             self.fps
         ]
+
         self.stopped = False
         self.inject()
         self.init()
+
+        self.camera.open_camera(camera_port)
+        print("Connecting to camera ", camera_port)
 
     def inject(self):
 
@@ -46,10 +50,11 @@ class Application:
     def debug(self):
         [c.debug() for c in self.components]
 
-        h, w, _ = self.debug_image.shape
-        # self.debug_image = cv2.resize(self.debug_image, (int(w/2), int(h/2)))
-        cv2.setMouseCallback(self.name, self.board.click)
-        cv2.imshow(self.name, self.debug_image)
+        if self.camera.cap is not None:
+            h, w, _ = self.debug_image.shape
+            # self.debug_image = cv2.resize(self.debug_image, (int(w/2), int(h/2)))
+            cv2.setMouseCallback(self.name, self.board.click)
+            cv2.imshow(self.name, self.debug_image)
 
     def shutdown(self):
         [c.shutdown() for c in self.components]

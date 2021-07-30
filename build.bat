@@ -5,6 +5,7 @@ pyinstaller main.py --noconfirm^
 	--add-data="C:/Users/qninh/AppData/Local/Programs/Python/Python38/Lib/site-packages/mediapipe/modules/palm_detection;mediapipe/modules/palm_detection" ^
 	--onedir ^
     --add-data="./static;static" ^
+	--add-data="./config;config" ^
 	--add-data="./fops;fops" ^
     --icon="./static/app/public/favicon.ico" ^
 	--hidden-import="engineio.async_drivers.gevent"

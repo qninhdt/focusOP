@@ -14,7 +14,7 @@ class Board(Component):
 
         self.squares = None
         self.last = 0
-        self.is_locked = False
+        self.is_locked = True
         self.thu_cong_mode = False
 
     def click(self, event, x, y, flags, params):

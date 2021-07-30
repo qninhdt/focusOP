@@ -2,7 +2,7 @@ from common import *
 from flask import Flask, send_from_directory
 from flask_socketio import SocketIO
 from flask_cors import CORS
-import glob, os, webbrowser
+import glob, os, webbrowser, device
 from threading import Timer
 from engineio.async_drivers import gevent
 
@@ -53,6 +53,14 @@ class Server:
         @ee.on('cursor')
         def cursor(point):
             self.socket.emit('cursor', point)
+
+        @self.socket.on('get_devices')
+        def get_device():
+            return device.getDeviceList()
+
+        @self.socket.on('set_device')
+        def set_device(index):
+            ee.emit('set_device',index)
 
     def start(self):
         target=self.socket.run(self.flask,  port=self.port, use_reloader=False)

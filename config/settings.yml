@@ -1,0 +1,7 @@
+hand-tracker:
+  min_detection_confidence: 0.75
+  min_tracking_confidence: 0.5
+server: 
+  public-port: 8080
+  api-port: 5000
+  name: FocusOP - Nguyen Quang Ninh

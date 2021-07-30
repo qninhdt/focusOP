@@ -1,14 +1,14 @@
 /*!
-  * vue-router v3.5.1
-  * (c) 2021 Evan You
-  * @license MIT
-  */
+	 * reveal.js plugin that adds syntax highlight support.
+	 */
 
 /*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
- * Released under the MIT License.
- */
+* reveal.js 4.0.2
+* https://revealjs.com
+* MIT licensed
+*
+* Copyright (C) 2020 Hakim El Hattab, https://hakim.se
+*/
 
 
 /*!
@@ -56,13 +56,13 @@
 
 
 /*!
-	 * reveal.js plugin that adds syntax highlight support.
-	 */
+  * vue-router v3.5.1
+  * (c) 2021 Evan You
+  * @license MIT
+  */
 
 /*!
-* reveal.js 4.0.2
-* https://revealjs.com
-* MIT licensed
-*
-* Copyright (C) 2020 Hakim El Hattab, https://hakim.se
-*/
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
+ * Released under the MIT License.
+ */

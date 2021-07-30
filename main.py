@@ -5,8 +5,11 @@ import os
 from server import Server
 from threading import Thread
 import httpwatcher
+from store import ee
+import setting
 
-def run_app(app):
+def run_app(port):
+    app = Application(name=setting.name,camera_port=port)
     while not app.stopped: 
         app.process()
         app.debug()
@@ -14,21 +17,23 @@ def run_app(app):
     app.shutdown()
 
 def open_browser():
-    webbrowser.open('http:/localhost:8080/app/explore')
+    webbrowser.open('http:/localhost:8080/app/device')
 
 def serve_file():
     Timer(1, open_browser).start()
-    httpwatcher.watch(os.path.realpath('./static'), open_browser=False, port=8080, watch_paths=[])
+    httpwatcher.watch(os.path.realpath('./static'), open_browser=False, port=setting.public_port, watch_paths=[])
 
 if __name__ == '__main__':
-    app = Application(name="FocusOP - qninh")
-    server = Server(5000,
+    server = Server(setting.api_port,
         static = os.path.realpath('./static'),
         fop    = os.path.realpath('./fops')
     )
 
-    thread1 = Thread(target=run_app, args=(app,))
-    thread1.start()
+    @ee.on("set_device")
+    def set_device(port):
+        print(port)
+        thread1 = Thread(target=run_app,args=(port,))
+        thread1.start()
 
     thread2 = Thread(target=serve_file)
     thread2.start()

@@ -1,17 +1,17 @@
-from math import dist
+from math import pi
 from common import *
 import mediapipe
 from . import Component
 from app.lib.hand import Hand
-
+import setting
 class HandDetector(Component):
     lib_mphand = mediapipe.solutions.hands
 
     def __init__(self):
         self.result = None
         self.created_tflite = False
-        self.mphand = self.lib_mphand.Hands(min_detection_confidence=0.75,
-          min_tracking_confidence=0.5,
+        self.mphand = self.lib_mphand.Hands(min_detection_confidence=setting.min_detection_confidence,
+          min_tracking_confidence=setting.min_tracking_confidence,
           max_num_hands=1)
 
     def _mp_process(self):
@@ -49,6 +49,6 @@ class HandDetector(Component):
         image = draw_transparent_rect(image, (0, 130, 100, 30), BLACK, 0.5)
         if hand is not None:
             draw_hand(image, hand.landmarks, hand.states)
-            draw_hand(image, hand.points * 100, hand.states)
+            draw_hand(image, hand.points * 1000, hand.states)
             draw_text(image, str(hand.get_hand_type_label()), (5, 150), 1, RED, 2)
         self.app.debug_image = image
